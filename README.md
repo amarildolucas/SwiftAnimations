@@ -12,7 +12,9 @@ selectElements // Selecting and deselecting
 insertAtIndex moves element from index a to b and shifts array 
 up, down, rightLeft, for more granular control over animations
 ```
+Each of the methods creates and adds an animation to the list of animations. 
 
+![](bubbleSortAnimation.gif)
 
 Here is original Bubble Sort code copied from awesome Swift Algorithms Club: https://github.com/raywenderlich/swift-algorithm-club
 
@@ -31,7 +33,7 @@ func originalBubbleSort(_  array:inout [Int]){
 }
 ```
 In order to use library you have to:
-1, Create an instance of the library
+1. Create an instance of the library
 ```
     let visualizer:ArrayAnimationView<Int> = ArrayAnimationView(frame: CGRect(x: 0, y: 0, width: 380, height: 50))
 ```
@@ -53,8 +55,13 @@ The key point here is recognize what algorithm is doing, and visualize it. For e
     array[j-1] = array[j]
     array[j] = tmp
 ```
-is performing swap of two elements of the array. 
+is performing swap of two elements of the array. The code below is a full example of animations 
 
+5. Animate changes
+    visualizer.resetAnimations()
+    visualizer.bubbleSort(&a)
+    visualizer.animateChanges()
+    
 
 
 
